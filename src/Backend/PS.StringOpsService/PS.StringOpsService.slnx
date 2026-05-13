@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/StringOpsService/" />
+  <Folder Name="/StringOpsService/API/">
+    <Project Path="StringOpsService/API/PS.StringOpsService.API/PS.StringOpsService.API.csproj" Id="44a9b6b1-6bf9-48f1-8927-6165fde3f64c" />
+  </Folder>
+  <Folder Name="/StringOpsService/Application/">
+    <Project Path="StringOpsService/Application/PS.StringOpsService.Application/PS.StringOpsService.Application.csproj" Id="f8e2359c-373d-4612-abc8-4c746bc8a5f6" />
+  </Folder>
+  <Folder Name="/StringOpsService/Common/">
+    <Project Path="StringOpsService/Common/PS.StringOpsService.Common/PS.StringOpsService.Common.csproj" Id="56f36f45-fe83-42a1-81de-0c539563fddc" />
+  </Folder>
+  <Folder Name="/StringOpsService/Domain/">
+    <Project Path="StringOpsService/Domain/PS.StringOpsService.Domain/PS.StringOpsService.Domain.csproj" Id="365b7048-b993-44b0-a638-816451f6ef90" />
+  </Folder>
+  <Folder Name="/StringOpsService/Infrastructure/">
+    <Project Path="StringOpsService/Infrastructure/PS.StringOpsService.Infrastructure/PS.StringOpsService.Infrastructure.csproj" Id="16e7a6dc-8a67-4073-816b-939aea751619" />
+  </Folder>
+</Solution>
