@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\PS.StringOpsService.Domain\PS.StringOpsService.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
