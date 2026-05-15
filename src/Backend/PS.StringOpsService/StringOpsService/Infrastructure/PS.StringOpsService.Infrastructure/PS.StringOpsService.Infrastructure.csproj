@@ -11,10 +11,4 @@
     <ProjectReference Include="..\..\Domain\PS.StringOpsService.Domain\PS.StringOpsService.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Operations\" />
-    <Folder Include="Registrations\" />
-    <Folder Include="Registry\" />
-  </ItemGroup>
-
 </Project>
