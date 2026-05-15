@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Application\PS.StringOpsService.Application\PS.StringOpsService.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\PS.StringOpsService.Infrastructure\PS.StringOpsService.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Application\PS.StringOpsService.Application\PS.StringOpsService.Application.csproj" />
     <ProjectReference Include="..\..\Domain\PS.StringOpsService.Domain\PS.StringOpsService.Domain.csproj" />
   </ItemGroup>
 

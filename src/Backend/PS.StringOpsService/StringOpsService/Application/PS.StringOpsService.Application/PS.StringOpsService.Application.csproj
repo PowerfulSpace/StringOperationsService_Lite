@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\PS.StringOpsService.Infrastructure\PS.StringOpsService.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Common\PS.StringOpsService.Common\PS.StringOpsService.Common.csproj" />
+    <ProjectReference Include="..\..\Domain\PS.StringOpsService.Domain\PS.StringOpsService.Domain.csproj" />
   </ItemGroup>
 
 </Project>
