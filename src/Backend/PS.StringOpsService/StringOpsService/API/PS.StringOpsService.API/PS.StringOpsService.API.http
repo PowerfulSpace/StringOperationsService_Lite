@@ -1,6 +1,15 @@
 @PS.StringOpsService.API_HostAddress = http://localhost:5099
 
-GET {{PS.StringOpsService.API_HostAddress}}/weatherforecast/
+POST {{PS.StringOpsService.API_HostAddress}}/api/string-operations/process
+Content-Type: application/json
 Accept: application/json
 
+{
+  "input": " hello world ",
+  "operations": [
+    "trim",
+    "upper",
+    "reverse"
+  ]
+}
 ###
