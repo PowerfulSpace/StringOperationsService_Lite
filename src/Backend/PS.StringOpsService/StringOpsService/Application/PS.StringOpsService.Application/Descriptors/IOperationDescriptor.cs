@@ -1,8 +1,8 @@
 ﻿using PS.StringOpsService.Domain.Operations.Interfaces;
 
-namespace PS.StringOpsService.Application.Registrations
+namespace PS.StringOpsService.Application.Descriptors
 {
-    public interface IOperationRegistration
+    public interface IOperationDescriptor
     {
         public IStringOperation Create(string[] args);
     }

@@ -1,10 +1,10 @@
-﻿using PS.StringOpsService.Application.Registrations;
+﻿using PS.StringOpsService.Application.Descriptors;
 
 namespace PS.StringOpsService.Application.Catalog
 {
     public interface IOperationCatalog
     {
-        public IOperationRegistration Get(string name);
-        public void Add(string name, IOperationRegistration operation);
+        public IOperationDescriptor Get(string name);
+        public void Add(string name, IOperationDescriptor operation);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using PS.StringOpsService.Application.Catalog;
-using PS.StringOpsService.Application.Registrations;
+using PS.StringOpsService.Application.Descriptors;
 using PS.StringOpsService.Domain.Operations.Interfaces;
 
 namespace PS.StringOpsService.Application.Factories
@@ -20,9 +20,9 @@ namespace PS.StringOpsService.Application.Factories
                 ? parts[1].Split(',')
                 : Array.Empty<string>();
 
-            IOperationRegistration registration = catalog.Get(name);
+            IOperationDescriptor registration = catalog.Get(name);
 
-            var result = registration.Create(args);
+            IStringOperation result = registration.Create(args);
             return result;
         }
     }

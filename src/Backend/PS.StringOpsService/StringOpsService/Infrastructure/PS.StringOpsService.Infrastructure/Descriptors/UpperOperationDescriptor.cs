@@ -1,10 +1,10 @@
-﻿using PS.StringOpsService.Application.Registrations;
+﻿using PS.StringOpsService.Application.Descriptors;
 using PS.StringOpsService.Domain.Operations.Interfaces;
 using PS.StringOpsService.Infrastructure.Operations;
 
-namespace PS.StringOpsService.Infrastructure.Registrations
+namespace PS.StringOpsService.Infrastructure.Descriptors
 {
-    public class UpperOperationRegistration : IOperationRegistration
+    public class UpperOperationDescriptor : IOperationDescriptor
     {
         public IStringOperation Create(string[] args)
         {
