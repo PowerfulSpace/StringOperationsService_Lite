@@ -1,9 +1,9 @@
-﻿using PS.StringOpsService.Application.Registrations.Interfaces;
-using PS.StringOpsService.Application.Registry.Interfaces;
+﻿using PS.StringOpsService.Application.Catalog;
+using PS.StringOpsService.Application.Registrations;
 
-namespace PS.StringOpsService.Infrastructure.Registry
+namespace PS.StringOpsService.Infrastructure.Catalog
 {
-    public class OperationRegistry : IOperationRegistry
+    public class OperationCatalog : IOperationCatalog
     {
         private readonly Dictionary<string, IOperationRegistration> _operations = new();
 

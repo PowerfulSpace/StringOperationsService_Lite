@@ -1,4 +1,4 @@
-﻿using PS.StringOpsService.Application.Registrations.Interfaces;
+﻿using PS.StringOpsService.Application.Registrations;
 using PS.StringOpsService.Domain.Operations.Interfaces;
 using PS.StringOpsService.Infrastructure.Operations;
 

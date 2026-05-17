@@ -1,6 +1,6 @@
 ﻿using PS.StringOpsService.Domain.Operations.Interfaces;
 
-namespace PS.StringOpsService.Application.Registrations.Interfaces
+namespace PS.StringOpsService.Application.Registrations
 {
     public interface IOperationRegistration
     {

@@ -1,8 +1,8 @@
+using PS.StringOpsService.Application.Catalog;
 using PS.StringOpsService.Application.Factories;
-using PS.StringOpsService.Application.Registry.Interfaces;
 using PS.StringOpsService.Application.Services;
+using PS.StringOpsService.Infrastructure.Catalog;
 using PS.StringOpsService.Infrastructure.Registrations;
-using PS.StringOpsService.Infrastructure.Registry;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<StringProcessor>();
 builder.Services.AddSingleton<OperationFactory>();
 
-builder.Services.AddSingleton<IOperationRegistry, OperationRegistry>();
+builder.Services.AddSingleton<IOperationCatalog, OperationCatalog>();
 
 
 
@@ -24,7 +24,7 @@ var app = builder.Build();
 
 
 
-var registry = app.Services.GetRequiredService<IOperationRegistry>();
+var registry = app.Services.GetRequiredService<IOperationCatalog>();
 
 registry.Add("trim", new TrimOperationRegistration());
 registry.Add("upper", new UpperOperationRegistration());

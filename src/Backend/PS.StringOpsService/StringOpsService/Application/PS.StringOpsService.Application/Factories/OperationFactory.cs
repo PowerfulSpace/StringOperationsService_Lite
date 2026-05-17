@@ -1,15 +1,16 @@
-﻿using PS.StringOpsService.Application.Registry.Interfaces;
+﻿using PS.StringOpsService.Application.Catalog;
+using PS.StringOpsService.Application.Registrations;
 using PS.StringOpsService.Domain.Operations.Interfaces;
 
 namespace PS.StringOpsService.Application.Factories
 {
     public class OperationFactory
     {
-        private readonly IOperationRegistry repository;
+        private readonly IOperationCatalog catalog;
 
-        public OperationFactory(IOperationRegistry repository)
+        public OperationFactory(IOperationCatalog repository)
         {
-            this.repository = repository;
+            this.catalog = repository;
         }
         public IStringOperation Create(string input)
         {
@@ -19,7 +20,7 @@ namespace PS.StringOpsService.Application.Factories
                 ? parts[1].Split(',')
                 : Array.Empty<string>();
 
-            var registration = repository.Get(name);
+            IOperationRegistration registration = catalog.Get(name);
 
             var result = registration.Create(args);
             return result;
