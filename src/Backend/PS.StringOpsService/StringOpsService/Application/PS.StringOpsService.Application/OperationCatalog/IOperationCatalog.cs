@@ -1,6 +1,6 @@
 ﻿using PS.StringOpsService.Application.Descriptors;
 
-namespace PS.StringOpsService.Application.Catalog
+namespace PS.StringOpsService.Application.OperationCatalog
 {
     public interface IOperationCatalog
     {

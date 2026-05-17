@@ -1,5 +1,5 @@
-﻿using PS.StringOpsService.Application.Catalog;
-using PS.StringOpsService.Application.Descriptors;
+﻿using PS.StringOpsService.Application.Descriptors;
+using PS.StringOpsService.Application.OperationCatalog;
 using PS.StringOpsService.Domain.Operations.Interfaces;
 
 namespace PS.StringOpsService.Application.Factories

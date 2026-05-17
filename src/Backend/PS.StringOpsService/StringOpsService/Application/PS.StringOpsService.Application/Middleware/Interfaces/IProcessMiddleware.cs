@@ -1,4 +1,4 @@
-﻿using PS.StringOpsService.Application.Delegates;
+﻿using PS.StringOpsService.Application.Middleware.Delegates;
 using PS.StringOpsService.Domain.Contexts;
 
 namespace PS.StringOpsService.Application.Middleware.Interfaces

@@ -1,7 +1,7 @@
-using PS.StringOpsService.Application.Catalog;
 using PS.StringOpsService.Application.Factories;
+using PS.StringOpsService.Application.OperationCatalog;
 using PS.StringOpsService.Application.Services;
-using PS.StringOpsService.Infrastructure.Catalog;
+using PS.StringOpsService.Infrastructure.OperationCatalog;
 using PS.StringOpsService.Infrastructure.Registrations;
 
 var builder = WebApplication.CreateBuilder(args);
