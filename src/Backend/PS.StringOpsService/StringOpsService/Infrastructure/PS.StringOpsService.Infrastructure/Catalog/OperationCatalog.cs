@@ -1,7 +1,7 @@
 ﻿using PS.StringOpsService.Application.Descriptors;
 using PS.StringOpsService.Application.OperationCatalog;
 
-namespace PS.StringOpsService.Infrastructure.OperationCatalog
+namespace PS.StringOpsService.Infrastructure.Catalog
 {
     public class OperationCatalog : IOperationCatalog
     {
