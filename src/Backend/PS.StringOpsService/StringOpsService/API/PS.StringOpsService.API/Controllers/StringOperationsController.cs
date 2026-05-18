@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PS.StringOpsService.API.Requests;
-using PS.StringOpsService.API.Responses;
+using PS.StringOpsService.API.DTOs;
 using PS.StringOpsService.Application.Factories;
 using PS.StringOpsService.Application.Services;
 using PS.StringOpsService.Domain.Contexts;

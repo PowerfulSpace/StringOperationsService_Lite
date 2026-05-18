@@ -1,4 +1,4 @@
-﻿namespace PS.StringOpsService.API.Requests
+﻿namespace PS.StringOpsService.API.DTOs
 {
     public sealed class ProcessStringRequest
     {

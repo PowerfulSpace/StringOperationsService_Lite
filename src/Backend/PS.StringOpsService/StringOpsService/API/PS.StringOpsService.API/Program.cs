@@ -1,8 +1,8 @@
 using PS.StringOpsService.Application.Factories;
 using PS.StringOpsService.Application.OperationCatalog;
 using PS.StringOpsService.Application.Services;
+using PS.StringOpsService.Infrastructure.Descriptors;
 using PS.StringOpsService.Infrastructure.OperationCatalog;
-using PS.StringOpsService.Infrastructure.Registrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,9 +26,9 @@ var app = builder.Build();
 
 var registry = app.Services.GetRequiredService<IOperationCatalog>();
 
-registry.Add("trim", new TrimOperationRegistration());
-registry.Add("upper", new UpperOperationRegistration());
-registry.Add("reverse", new ReverseOperationRegistration());
+registry.Add("trim", new TrimOperationDescriptor());
+registry.Add("upper", new UpperOperationDescriptor());
+registry.Add("reverse", new ReverseOperationDescriptor());
 
 
 
