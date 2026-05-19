@@ -1,18 +1,21 @@
 ﻿using PS.StringOpsService.Application.Middleware.Delegates;
 using PS.StringOpsService.Application.Middleware.Interfaces;
 using PS.StringOpsService.Domain.Contexts;
+using System.Diagnostics;
 
-namespace PS.StringOpsService.Application.Middleware
+namespace PS.StringOpsService.Application.Middleware.Implementations
 {
-    public class LoggingMiddleware : IProcessMiddleware
+    public class TimingMiddleware : IProcessMiddleware
     {
         public ProcessContext Invoke(ProcessContext context, ProcessDelegate next)
         {
-            Console.WriteLine($"Before: {context.Value}");
+            var sw = Stopwatch.StartNew();
 
             var result = next(context);
 
-            Console.WriteLine($"After: {result.Value}");
+            sw.Stop();
+
+            Console.WriteLine($"Executed in {sw.ElapsedMilliseconds}ms");
 
             return result;
         }
