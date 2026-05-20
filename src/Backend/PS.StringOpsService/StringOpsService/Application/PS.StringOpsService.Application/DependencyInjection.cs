@@ -11,6 +11,9 @@ namespace PS.StringOpsService.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
+            services
+                .AddApplicationMediatR();
+
             services.AddSingleton<StringProcessor>();
             services.AddSingleton<OperationFactory>();
 
@@ -19,6 +22,16 @@ namespace PS.StringOpsService.Application
 
             services.AddSingleton<MiddlewarePipelineBuilder>();
 
+
+            return services;
+        }
+
+        private static IServiceCollection AddApplicationMediatR(this IServiceCollection services)
+        {
+            services.AddMediatR(cfg =>
+            {
+                cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+            });
 
             return services;
         }

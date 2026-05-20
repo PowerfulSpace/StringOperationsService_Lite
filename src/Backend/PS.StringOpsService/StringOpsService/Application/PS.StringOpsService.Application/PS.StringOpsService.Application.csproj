@@ -16,4 +16,8 @@
     <ProjectReference Include="..\..\Domain\PS.StringOpsService.Domain\PS.StringOpsService.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CQRS\Queries\" />
+  </ItemGroup>
+
 </Project>
