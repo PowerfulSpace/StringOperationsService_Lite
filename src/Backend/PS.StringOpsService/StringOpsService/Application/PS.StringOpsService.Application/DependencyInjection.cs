@@ -12,16 +12,9 @@ namespace PS.StringOpsService.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services
-                .AddApplicationMediatR();
-
-            services.AddSingleton<StringProcessor>();
-            services.AddSingleton<OperationFactory>();
-
-            services.AddSingleton<IProcessMiddleware, LoggingMiddleware>();
-            services.AddSingleton<IProcessMiddleware, TimingMiddleware>();
-
-            services.AddSingleton<MiddlewarePipelineBuilder>();
-
+                .AddApplicationMediatR()
+                .AddCoreProcessing()
+                .AddProcessMiddleware();
 
             return services;
         }
@@ -33,6 +26,21 @@ namespace PS.StringOpsService.Application
                 cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
             });
 
+            return services;
+        }
+
+        private static IServiceCollection AddProcessMiddleware(this IServiceCollection services)
+        {
+            services.AddSingleton<IProcessMiddleware, LoggingMiddleware>();
+            services.AddSingleton<IProcessMiddleware, TimingMiddleware>();
+            return services;
+        }
+
+        private static IServiceCollection AddCoreProcessing(this IServiceCollection services)
+        {
+            services.AddSingleton<StringProcessor>();
+            services.AddSingleton<OperationFactory>();
+            services.AddSingleton<MiddlewarePipelineBuilder>();
             return services;
         }
     }
