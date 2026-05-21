@@ -1,4 +1,6 @@
-﻿using PS.StringOpsService.Application.OperationCatalog;
+﻿using FluentValidation;
+using FluentValidation.AspNetCore;
+using PS.StringOpsService.Application.OperationCatalog;
 using PS.StringOpsService.Infrastructure.Descriptors;
 
 namespace PS.StringOpsService.API
@@ -9,6 +11,23 @@ namespace PS.StringOpsService.API
         {
             services.AddControllers();
             services.AddOpenApi();
+
+            services
+                .AddAPIValidation();
+
+            return services;
+        }
+
+        private static IServiceCollection AddAPIValidation(this IServiceCollection services)
+        {
+            services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
+
+            //Отключает встроенную валидацию DataAnnotations
+            //Оставляет только FluentValidation (чтобы не было дублирования)
+            services.AddFluentValidationAutoValidation(options =>
+            {
+                options.DisableDataAnnotationsValidation = true;
+            });
 
             return services;
         }

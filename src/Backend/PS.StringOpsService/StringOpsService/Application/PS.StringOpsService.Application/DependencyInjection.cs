@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using PS.StringOpsService.Application.Behaviors;
 using PS.StringOpsService.Application.Factories;
 using PS.StringOpsService.Application.Middleware;
 using PS.StringOpsService.Application.Middleware.Implementations;
@@ -13,8 +16,20 @@ namespace PS.StringOpsService.Application
         {
             services
                 .AddApplicationMediatR()
+                .AddApplicationValidation()
                 .AddCoreProcessing()
                 .AddProcessMiddleware();
+
+            return services;
+        }
+
+        private static IServiceCollection AddApplicationValidation(this IServiceCollection services)
+        {
+            // Регистрируем все валидаторы из Application сборки
+            services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
+
+            // Добавляем pipeline behavior для MediatR
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             return services;
         }
